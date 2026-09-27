@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — Meet Suthar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animation.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader"><div class="loader-content"><div class="loader-ring"></div><div class="loader-text">Loading</div><div class="loader-bar"><span></span></div></div></div>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+<canvas id="three-bg"></canvas>
+
+<nav class="navbar">
+  <a href="index.html" class="logo"><div class="logo-mark">M</div><span>Meet</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html" class="active">About</a></li><li><a href="skills.html">Skills</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="experience.html">Experience</a></li><li><a href="training.html">Training</a></li><li><a href="resume.html">Resume</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta magnetic">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+<section class="section" style="padding-top:180px">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-tag">About Me</div>
+      <h1 class="section-title">The story behind <span class="grad">the craft.</span></h1>
+    </div>
+
+    <div class="about-grid">
+      <div class="reveal" style="position:relative">
+        <div class="about-decor"></div>
+        <div class="about-img">
+          <img src="D:\Meet\portfolio\image\Meet.png" alt="Meet Suthar">
+        </div>
+      </div>
+      <div class="about-content reveal">
+        <h2>Building <span class="grad-text">production-ready</span> products since 2022.</h2>
+        <p>I'm Meet Suthar, a Full Stack Engineer based in Mehsana, Gujarat. I build web applications, AI-powered products, and scalable backend systems across the full software development lifecycle.</p>
+        <p>My work focuses on applied AI, agent infrastructure, RAG systems, reliable APIs, and cloud architectures that turn product requirements into useful, maintainable software.</p>
+        <div class="about-info">
+          <div><span class="k">Name</span><span class="v">Meet Suthar</span></div>
+                    <div><span class="k">Email</span><span class="v">meetsuthar412@gmail.com</span></div>
+          <div><span class="k">Location</span><span class="v">Mehsana, Gujarat</span></div>
+          <div><span class="k">Availability</span><span class="v" style="color:#22c55e">Open to Work</span></div>
+          <div><span class="k">Experience</span><span class="v">4+ Years</span></div>
+          <div><span class="k">Focus</span><span class="v">Full Stack · Applied AI</span></div>
+        </div>
+        <a href="resume/Meet_CV.pdf"
+   target="_blank"
+   class="btn btn-primary magnetic">
+    View Resume
+</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3 stagger">
+      <div class="card"><div class="card-ic"><i class="fa-solid fa-compass"></i></div><h3>Mission</h3><p>To engineer digital products that elevate brands and empower the people who use them.</p></div>
+      <div class="card"><div class="card-ic"><i class="fa-solid fa-eye"></i></div><h3>Vision</h3><p>A world where every interface feels intentional, every interaction feels delightful, and every product feels inevitable.</p></div>
+      <div class="card"><div class="card-ic"><i class="fa-solid fa-bullseye"></i></div><h3>Goals</h3><p>Ship 100+ premium products, mentor the next generation of builders, and push the boundaries of web craftsmanship.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY TIMELINE -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-tag">My Journey</div>
+      <h2 class="section-title">A career of <span class="grad">continuous growth.</span></h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item"><div class="tl-date">January 2026 — Present</div><div class="tl-title">Web Development Specialist</div><div class="tl-company">Freelancer</div><div class="tl-desc">Specializing in modern web development with cutting-edge technologies. Building responsive, performant websites and web applications for diverse clients.</div></div>
+      <div class="tl-item"><div class="tl-date">January 2025 — Present</div><div class="tl-title">Freelance Graphic Designer</div><div class="tl-company">Freelancer</div><div class="tl-desc">Creating visual identities, marketing materials, and brand assets. Combining design principles with technical understanding for cohesive digital experiences.</div></div>
+      <div class="tl-item"><div class="tl-date">January 2024 — Present</div><div class="tl-title">Full Stack Freelancer</div><div class="tl-company">Freelancer</div><div class="tl-desc">End-to-end web development — from frontend interfaces to backend systems. Delivering complete digital solutions for startups and businesses.</div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom"><div>© 2026 Meet Suthar</div><div>Crafted with precision</div></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<script src="js/three-background.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/experience.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

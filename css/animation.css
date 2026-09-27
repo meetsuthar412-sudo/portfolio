@@ -1,0 +1,182 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   HOLOGRAPHIC CODE PANELS — CSS3D
+   Glassmorphism panels for Three.js CSS3DRenderer
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.holo-panel{
+  width: 280px;
+  padding: 16px 18px;
+  background: rgba(10, 11, 24, 0.55);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow:
+    0 0 30px rgba(0, 240, 255, 0.15),
+    0 0 60px rgba(139, 92, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #e8ecff;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.holo-header{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.holo-header .dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.holo-code{
+  margin: 0;
+  white-space: pre;
+  font-size: 10px;
+  color: #a0a8d0;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* Make panels slightly transparent for depth */
+.holo-panel::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), transparent);
+  pointer-events: none;
+}
+
+/* Responsive: smaller panels on mobile */
+@media (max-width: 768px){
+  .holo-panel{
+    width: 200px;
+    padding: 12px 14px;
+    font-size: 9px;
+  }
+  .holo-code{
+    font-size: 8px;
+  }
+}
+
+/* Ensure CSS3D canvas is above WebGL but below content */
+#three-bg > div:last-child{
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#three-bg canvas{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   AI BACKGROUND SUPPORTING ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Binary canvas layering */
+body > canvas[style*="position:fixed"]{
+  position: fixed !important;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Three.js canvas */
+#three-bg{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#three-bg canvas{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Loader animations */
+@keyframes spin{
+  to{transform:rotate(360deg)}
+}
+
+@keyframes loadBar{
+  to{width:100%}
+}
+
+/* Pulse for active indicators */
+@keyframes pulse{
+  0%,100%{opacity:1}
+  50%{opacity:.4}
+}
+
+/* Shine effect for logo */
+@keyframes shine{
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(100%)}
+}
+
+/* Floating animation */
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-20px)}
+}
+
+/* Scroll indicator dot */
+@keyframes scrollDot{
+  0%{top:8px;opacity:1}
+  100%{top:24px;opacity:0}
+}
+
+/* Marquee */
+@keyframes marquee{
+  to{transform:translateX(-50%)}
+}
+
+/* Glow pulse */
+@keyframes glowPulse{
+  0%,100%{box-shadow:0 0 20px rgba(0,240,255,.3),0 0 40px rgba(59,130,246,.2)}
+  50%{box-shadow:0 0 30px rgba(0,240,255,.5),0 0 60px rgba(59,130,246,.4)}
+}
+.glow-pulse{animation:glowPulse 3s ease-in-out infinite}
+
+/* Reveal states */
+.fade-up{opacity:0;transform:translateY(40px)}
+.fade-down{opacity:0;transform:translateY(-40px)}
+.fade-left{opacity:0;transform:translateX(-40px)}
+.fade-right{opacity:0;transform:translateX(40px)}
+.zoom-in{opacity:0;transform:scale(.9)}
+.blur-in{opacity:0;filter:blur(20px)}
+
+.stagger > *{opacity:0;transform:translateY(30px)}
+
+/* Magnetic button */
+.magnetic{transition:transform .3s cubic-bezier(.22,1,.36,1)}
+
+/* Splitting */
+[data-split]{opacity:0}
+.char,.word{display:inline-block;will-change:transform}

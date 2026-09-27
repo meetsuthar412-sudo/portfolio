@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Training & Internship — Meet Suthar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader">
+  <div class="loader-content">
+    <div class="loader-ring"></div>
+    <div class="loader-text">Loading</div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<canvas id="three-bg"></canvas>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">
+    <div class="logo-mark">M</div>
+    <span>Meet</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="training.html" class="active">Training</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta magnetic">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+<section class="section" style="padding-top:180px">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-tag">Learning Journey</div>
+      <h1 class="section-title">Training & <span class="grad">Internship.</span></h1>
+      <p class="section-sub">Continuous learning through hands-on training and real-world internships.</p>
+    </div>
+
+    <div class="exp-grid stagger">
+      <div class="train-card">
+        <div class="train-ic"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="train-body">
+          <span class="train-type"><i class="fa-solid fa-book"></i> Training</span>
+          <h3>Web Development Training</h3>
+          <div class="train-role">Trainee</div>
+          <div class="train-company"><i class="fa-solid fa-building"></i> NSIC Rajkot</div>
+          <p class="train-desc">Comprehensive web development training covering HTML, CSS, JavaScript, and modern web technologies. Learned industry best practices, responsive design principles, and full-stack development fundamentals through hands-on projects and mentorship.</p>
+          <div class="exp-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Web Fundamentals</span></div>
+        </div>
+      </div>
+
+      <div class="train-card">
+        <div class="train-ic" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="train-body">
+          <span class="train-type" style="background:rgba(236,72,153,.15);color:#ec4899;border-color:rgba(236,72,153,.3)"><i class="fa-solid fa-briefcase"></i> Internship</span>
+          <h3>Python Programming Intern</h3>
+          <div class="train-role">Intern</div>
+          <div class="train-company"><i class="fa-solid fa-building"></i> Elsner Technologies Pvt. Ltd.</div>
+          <p class="train-desc">Professional internship focused on Python programming and software development. Gained practical experience in Python scripting, automation, data processing, and working with real-world projects in a professional environment.</p>
+          <div class="exp-tags"><span>Python</span><span>Automation</span><span>Scripting</span><span>Software Dev</span></div>
+        </div>
+      </div>
+
+      <div class="train-card">
+        <div class="train-ic" style="background:linear-gradient(135deg,#22c55e,#10b981)"><i class="fa-solid fa-globe"></i></div>
+        <div class="train-body">
+          <span class="train-type" style="background:rgba(34,197,94,.15);color:#22c55e;border-color:rgba(34,197,94,.3)"><i class="fa-solid fa-rocket"></i> Project</span>
+          <h3>Website Development & Web Scraping</h3>
+          <div class="train-role">Developer</div>
+          <div class="train-company"><i class="fa-solid fa-building"></i> UMA Dye Chem</div>
+          <p class="train-desc">Real-world project involving website development and web scraping for a chemical industry client. Built a functional website and implemented automated data extraction solutions to support business operations and market research.</p>
+          <div class="exp-tags"><span>Web Development</span><span>Web Scraping</span><span>Python</span><span>Business</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="text-align:center;padding:50px;margin-top:60px;background:linear-gradient(135deg,rgba(0,240,255,.08),rgba(59,130,246,.08))">
+      <h3 style="font-family:var(--font-display);font-size:28px;margin-bottom:10px">Learning Never Stops</h3>
+      <p style="color:var(--text-dim);max-width:600px;margin:0 auto">Every training and internship has shaped my approach to building digital products. I believe in continuous growth and staying updated with the latest technologies.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <div>© 2026 Meet Suthar</div>
+      <div>Crafted with precision</div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<script src="js/three-background.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/training.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

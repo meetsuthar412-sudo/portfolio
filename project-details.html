@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project Details — Meet Suthar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader">
+  <div class="loader-content">
+    <div class="loader-ring"></div>
+    <div class="loader-text">Loading</div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<canvas id="three-bg"></canvas>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">
+    <div class="logo-mark">M</div>
+    <span>Meet</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta magnetic">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+<section class="project-hero">
+  <div class="container">
+    <div class="chip reveal" id="projectCategory">
+      <i class="fa-solid fa-bolt" style="color:var(--neon-cyan)"></i> Loading...
+    </div>
+    <h1 class="reveal" id="projectTitle" style="margin-top:20px">Project Details</h1>
+    <p class="reveal" id="projectSubtitle">Loading project information...</p>
+    <div class="reveal" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+      <a href="#" class="btn btn-primary magnetic" id="livePreviewBtn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
+      <a href="portfolio.html" class="btn btn-ghost magnetic"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="project-banner reveal">
+    <img id="projectBanner" src="" alt="Project Banner">
+  </div>
+
+  <div class="project-gallery stagger" id="projectGallery">
+    <!-- Gallery images will be populated dynamically -->
+  </div>
+
+  <div class="detail-grid stagger">
+    <div class="detail-block">
+      <h4><i class="fa-solid fa-eye"></i> Overview</h4>
+      <p style="color:var(--text-dim)" id="projectOverview">Project overview will be displayed here.</p>
+    </div>
+    <div class="detail-block">
+      <h4><i class="fa-solid fa-list-check"></i> Key Features</h4>
+      <ul style="color:var(--text-dim);list-style:none;display:flex;flex-direction:column;gap:8px" id="projectFeatures">
+        <!-- Features will be populated dynamically -->
+      </ul>
+    </div>
+    <div class="detail-block">
+      <h4><i class="fa-solid fa-microchip"></i> Technologies</h4>
+      <div class="resume-tags" id="projectTech">
+        <!-- Technologies will be populated dynamically -->
+      </div>
+    </div>
+    <div class="detail-block">
+      <h4><i class="fa-solid fa-trophy"></i> Highlights</h4>
+      <p style="color:var(--text-dim)" id="projectHighlights">Project highlights will be displayed here.</p>
+    </div>
+  </div>
+
+  <div class="detail-grid stagger">
+    <div class="detail-block">
+      <h4><i class="fa-solid fa-lightbulb"></i> Solution</h4>
+      <p style="color:var(--text-dim)" id="projectSolution">Technical solution details will be displayed here.</p>
+    </div>
+    <div class="detail-block">
+      <h4><i class="fa-solid fa-chart-line"></i> Results</h4>
+      <p style="color:var(--text-dim)" id="projectResults">Project outcomes and impact will be displayed here.</p>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <div>© 2026 Meet Suthar</div>
+      <div>Crafted with precision</div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<script src="js/three-background.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/portfolio-data.js"></script>
+<script src="js/project-details-render.js"></script>
+
+<script>
+// Project Data
+const projects = {
+  'ai-automation': {
+    category: 'AI Platform',
+    title: 'AI Business Automation Platform',
+    subtitle: 'Enterprise AI suite automating workflows across sales, operations, and support with intelligent process automation and machine learning.',
+    banner: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80'
+    ],
+    overview: 'A comprehensive AI-powered automation platform that streamlines business processes across multiple departments. The system integrates machine learning models to optimize workflows, reduce manual tasks, and improve operational efficiency.',
+    features: [
+      '✓ AI-powered workflow automation',
+      '✓ Intelligent process optimization',
+      '✓ Real-time analytics dashboard',
+      '✓ Multi-department integration',
+      '✓ Custom rule engine',
+      '✓ Automated reporting'
+    ],
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'Java', 'Spring Boot', 'REST API', 'MySQL', 'Machine Learning'],
+    highlights: 'Reduced manual processing time by 75%. Automated 50+ business processes. Integrated with 15+ third-party systems.',
+    solution: 'Built a microservices architecture using Spring Boot with AI/ML models for intelligent decision-making. Implemented event-driven architecture for real-time processing.',
+    results: '75% reduction in manual tasks · 3.5x faster processing · $500K+ annual cost savings · 98% accuracy in automation'
+  },
+  'ai-chart-app': {
+    category: 'AI Analytics',
+    title: 'AI Chart App',
+    subtitle: 'Interactive analytics application for transforming chart data into readable insights and executive dashboards.',
+    banner: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+      'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&q=80'
+    ],
+    overview: 'An analytics experience designed to help teams convert raw data into clear visual stories, track KPI trends, and surface insights faster with minimal friction.',
+    features: [
+      '✓ Interactive chart visualization',
+      '✓ Business KPI tracking',
+      '✓ AI-assisted insight summaries',
+      '✓ Data-driven reporting',
+      '✓ Trend analysis',
+      '✓ Executive-ready dashboards'
+    ],
+    tech: ['Python', 'JavaScript', 'Charts', 'Analytics', 'AI'],
+    highlights: 'Built for quick decision support and executive reporting with clean visual storytelling.',
+    solution: 'Created a responsive analytics app focused on clear visualization, intelligent summarization, and fast drill-down into chart-based insights.',
+    results: 'Improved insight visibility · cleaner executive monitoring · faster data interpretation'
+  },
+  'crm-erp': {
+    category: 'Enterprise',
+    title: 'Enterprise CRM & ERP Platform',
+    subtitle: 'Unified business management suite with CRM, inventory, HR, and finance modules for streamlined enterprise operations.',
+    banner: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+      'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80'
+    ],
+    overview: 'An all-in-one enterprise resource planning system combining CRM, inventory management, HR, and financial modules. Designed for mid to large-scale enterprises requiring integrated business operations.',
+    features: [
+      '✓ Complete CRM system',
+      '✓ Inventory management',
+      '✓ HR & payroll module',
+      '✓ Financial accounting',
+      '✓ Real-time reporting',
+      '✓ Role-based access control'
+    ],
+    tech: ['Java', 'Spring Boot', 'MySQL', 'HTML5', 'CSS3', 'JavaScript', 'REST API'],
+    highlights: 'Unified 5 business modules. Serving 500+ employees. Processing $10M+ transactions monthly.',
+    solution: 'Developed modular monolithic architecture with Spring Boot. Implemented multi-tenant database design for scalability.',
+    results: '40% improvement in operational efficiency · 60% faster reporting · 99.9% uptime · 500+ active users'
+  },
+  'ecommerce': {
+    category: 'E-Commerce',
+    title: 'Enterprise Multi-Vendor E-Commerce',
+    subtitle: 'Scalable marketplace platform with real-time inventory, multi-vendor management, payment integration, and analytics.',
+    banner: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80',
+      'https://images.unsplash.com/photo-1556742049-bebda4e38f71?w=800&q=80'
+    ],
+    overview: 'A comprehensive multi-vendor marketplace enabling thousands of sellers to list products, manage inventory, and process orders with integrated payment and shipping solutions.',
+    features: [
+      '✓ Multi-vendor management',
+      '✓ Real-time inventory sync',
+      '✓ Payment gateway integration',
+      '✓ Order tracking system',
+      '✓ Vendor analytics dashboard',
+      '✓ Automated commission calculation'
+    ],
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'Spring Boot', 'MySQL', 'Payment API', 'Redis'],
+    highlights: 'Supporting 10,000+ vendors. Processing 50,000+ orders monthly. $5M+ GMV processed.',
+    solution: 'Built event-driven architecture with message queues for order processing. Implemented caching layer for performance.',
+    results: '10,000+ active vendors · 50K+ monthly orders · 99.95% uptime · 2-second page load time'
+  },
+  'healthcare': {
+    category: 'Healthcare',
+    title: 'Smart Healthcare Management Platform',
+    subtitle: 'HIPAA-compliant hospital management system with patient records, appointments, billing, and telemedicine integration.',
+    banner: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
+      'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80'
+    ],
+    overview: 'A comprehensive healthcare management platform designed for hospitals and clinics. Features include electronic health records, appointment scheduling, billing, and telemedicine capabilities.',
+    features: [
+      '✓ Electronic Health Records (EHR)',
+      '✓ Appointment scheduling',
+      '✓ Billing & insurance',
+      '✓ Telemedicine integration',
+      '✓ Lab results management',
+      '✓ HIPAA compliance'
+    ],
+    tech: ['Java', 'Spring Boot', 'MySQL', 'WebRTC', 'HL7/FHIR'],
+    highlights: 'HIPAA-compliant. Serving 50+ healthcare facilities. Managing 100,000+ patient records.',
+    solution: 'Implemented secure microservices architecture with end-to-end encryption. Integrated HL7/FHIR standards for interoperability.',
+    results: '50+ healthcare facilities · 100K+ patient records · 40% reduction in admin time · HIPAA certified'
+  },
+  'bi-dashboard': {
+    category: 'Analytics',
+    title: 'Business Intelligence Dashboard',
+    subtitle: 'Real-time analytics platform with interactive charts, KPI tracking, data visualization, and automated reporting.',
+    banner: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
+    ],
+    overview: 'A powerful business intelligence platform providing real-time data visualization, KPI tracking, and automated reporting for data-driven decision making.',
+    features: [
+      '✓ Interactive data visualizations',
+      '✓ Real-time KPI dashboards',
+      '✓ Automated report generation',
+      '✓ Custom chart builder',
+      '✓ Data export capabilities',
+      '✓ Multi-source integration'
+    ],
+    tech: ['JavaScript', 'D3.js', 'Chart.js', 'React', 'Node.js', 'PostgreSQL'],
+    highlights: 'Processing 1M+ data points daily. 50+ visualization types. Real-time updates.',
+    solution: 'Built responsive dashboard with D3.js and Chart.js. Implemented WebSocket for real-time data streaming.',
+    results: '1M+ data points processed daily · 60% faster insights · 50+ chart types · Real-time updates'
+  },
+  'fintech': {
+    category: 'FinTech',
+    title: 'Digital Banking & FinTech Platform',
+    subtitle: 'Secure digital banking solution with real-time transactions, payment gateway, wallet management, and fraud detection.',
+    banner: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80',
+      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
+      'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80'
+    ],
+    overview: 'A comprehensive digital banking platform offering secure transactions, payment processing, wallet management, and advanced fraud detection systems.',
+    features: [
+      '✓ Real-time transactions',
+      '✓ Payment gateway integration',
+      '✓ Digital wallet',
+      '✓ Fraud detection AI',
+      '✓ Multi-currency support',
+      '✓ PCI-DSS compliance'
+    ],
+    tech: ['Java', 'Spring Boot', 'Payment API', 'MySQL', 'Redis', 'Kafka'],
+    highlights: 'PCI-DSS compliant. Processing $50M+ monthly. 99.99% uptime. Real-time fraud detection.',
+    solution: 'Implemented microservices with event sourcing. Built real-time fraud detection using machine learning.',
+    results: '$50M+ monthly transactions · 99.99% uptime · 99.9% fraud detection accuracy · PCI-DSS certified'
+  },
+  'awesome-generative-ai': {
+    category: 'Generative AI',
+    title: 'Awesome Generative AI',
+    subtitle: 'Curated generative AI toolkit and showcase for prompt workflows, model experiments, and intelligent creative automation.',
+    banner: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+      'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&q=80',
+      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80'
+    ],
+    overview: 'A modern generative AI showcase for experimentation with prompts, model workflows, creative automation, and intelligent content generation patterns.',
+    features: [
+      '✓ Prompt workflow templates',
+      '✓ Model experimentation',
+      '✓ Creative automation pipelines',
+      '✓ AI-driven content prototyping',
+      '✓ Workflow orchestration',
+      '✓ Research-friendly UI'
+    ],
+    tech: ['Generative AI', 'Python', 'LLMs', 'Automation', 'Prompt Engineering'],
+    highlights: 'Built as a practical AI experimentation and exploration workspace for fast iteration.',
+    solution: 'Designed a clean framework for prompt testing, automation pipelines, and research-driven AI experimentation with a polished UI.',
+    results: 'Faster model exploration · streamlined prompt evaluation · improved AI ideation flow'
+  },
+  'chat-with-pdf': {
+    category: 'AI Documents',
+    title: 'Chat with PDF',
+    subtitle: 'Intelligent PDF assistant for extracting answers, summaries, and context from lengthy research and business documents.',
+    banner: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
+      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
+      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80'
+    ],
+    overview: 'A document-focused AI assistant built for uploading PDFs and asking contextual questions to quickly surface key information from research and operational documents.',
+    features: [
+      '✓ PDF upload and indexing',
+      '✓ Natural-language Q&A',
+      '✓ Context-aware summaries',
+      '✓ Quick document lookup',
+      '✓ Knowledge retrieval workflows',
+      '✓ Better research productivity'
+    ],
+    tech: ['AI', 'PDF', 'Python', 'Search', 'LLMs'],
+    highlights: 'Turns dense documents into searchable, conversational knowledge assets for faster understanding.',
+    solution: 'Focused on retrieval and summarization workflows to make lengthy PDFs easier to explore and understand through natural language interaction.',
+    results: 'Faster research workflows · easier document understanding · improved productivity'
+  },
+  'logistics': {
+    category: 'Logistics',
+    title: 'Logistics & Supply Chain Platform',
+    subtitle: 'End-to-end supply chain management with route optimization, inventory tracking, fleet management, and real-time analytics.',
+    banner: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80',
+      'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80',
+      'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80'
+    ],
+    overview: 'A comprehensive logistics and supply chain management platform optimizing routes, tracking inventory, managing fleets, and providing real-time visibility across the supply chain.',
+    features: [
+      '✓ Route optimization',
+      '✓ Real-time tracking',
+      '✓ Fleet management',
+      '✓ Inventory management',
+      '✓ Warehouse management',
+      '✓ Predictive analytics'
+    ],
+    tech: ['Java', 'Spring Boot', 'HTML5', 'CSS3', 'JavaScript', 'Google Maps API', 'MySQL'],
+    highlights: 'Managing 500+ vehicles. 30% reduction in delivery time. Real-time GPS tracking.',
+    solution: 'Built GPS tracking system with Google Maps API. Implemented route optimization algorithms for efficiency.',
+    results: '500+ vehicles managed · 30% faster deliveries · 25% cost reduction · Real-time tracking'
+  },
+  'lms': {
+    category: 'EdTech',
+    title: 'AI Learning Management System',
+    subtitle: 'Intelligent e-learning platform with course management, AI-powered recommendations, progress tracking, and assessments.',
+    banner: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80'
+    ],
+    overview: 'An AI-powered learning management system providing personalized learning experiences, automated assessments, and intelligent content recommendations.',
+    features: [
+      '✓ Course management',
+      '✓ AI-powered recommendations',
+      '✓ Progress tracking',
+      '✓ Automated assessments',
+      '✓ Video streaming',
+      '✓ Certificate generation'
+    ],
+    tech: ['Java', 'Spring Boot', 'HTML5', 'CSS3', 'JavaScript', 'MySQL', 'AWS S3'],
+    highlights: 'Serving 10,000+ students. 500+ courses. AI-powered personalization.',
+    solution: 'Built scalable LMS with Spring Boot. Implemented recommendation engine using collaborative filtering.',
+    results: '10,000+ active students · 500+ courses · 85% course completion rate · AI personalization'
+  },
+  'real-estate': {
+    category: 'Real Estate',
+    title: 'Commercial Real Estate Platform',
+    subtitle: 'Property listing and management platform with virtual tours, tenant management, lease tracking, and investment analytics.',
+    banner: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80'
+    ],
+    overview: 'A comprehensive commercial real estate platform enabling property listings, virtual tours, tenant management, lease tracking, and investment analytics.',
+    features: [
+      '✓ Property listings',
+      '✓ Virtual 3D tours',
+      '✓ Tenant management',
+      '✓ Lease tracking',
+      '✓ Investment analytics',
+      '✓ Document management'
+    ],
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'Java', 'Three.js', 'MySQL', 'Google Maps API'],
+    highlights: 'Managing $500M+ in properties. 3D virtual tours. 1000+ listings.',
+    solution: 'Built interactive property platform with Three.js for 3D tours. Integrated mapping and analytics.',
+    results: '$500M+ property value · 1000+ listings · 3D virtual tours · 40% faster leasing'
+  },
+  'saas-pm': {
+    category: 'SaaS',
+    title: 'SaaS Project Management Platform',
+    subtitle: 'Cloud-based project management with Kanban boards, Gantt charts, team collaboration, time tracking, and resource planning.',
+    banner: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=2000&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+      'https://images.unsplash.com/photo-1531498860502-7c67cf02f657?w=800&q=80',
+      'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80'
+    ],
+    overview: 'A comprehensive cloud-based project management platform offering Kanban boards, Gantt charts, team collaboration tools, time tracking, and resource planning.',
+    features: [
+      '✓ Kanban boards',
+      '✓ Gantt charts',
+      '✓ Team collaboration',
+      '✓ Time tracking',
+      '✓ Resource planning',
+      '✓ Automated workflows'
+    ],
+    tech: ['Java', 'Spring Boot', 'JavaScript', 'MySQL', 'WebSocket', 'Redis'],
+    highlights: '500+ teams using platform. 99.9% uptime. Real-time collaboration.',
+    solution: 'Built real-time collaboration with WebSocket. Implemented multi-tenant SaaS architecture.',
+    results: '500+ active teams · 99.9% uptime · 35% productivity increase · Real-time sync'
+  }
+};
+
+// Load project data based on URL parameter
+(function(){
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('project');
+  
+  if(projectId && projects[projectId]){
+    const project = projects[projectId];
+    
+    // Update page content
+    document.getElementById('projectCategory').innerHTML = `<i class="fa-solid fa-bolt" style="color:var(--neon-cyan)"></i> ${project.category}`;
+    document.getElementById('projectTitle').textContent = project.title;
+    document.getElementById('projectSubtitle').textContent = project.subtitle;
+    document.getElementById('projectBanner').src = project.banner;
+    document.getElementById('projectOverview').textContent = project.overview;
+    document.getElementById('projectHighlights').textContent = project.highlights;
+    document.getElementById('projectSolution').textContent = project.solution;
+    document.getElementById('projectResults').textContent = project.results;
+    
+    // Update features
+    const featuresList = document.getElementById('projectFeatures');
+    featuresList.innerHTML = project.features.map(f => `<li>${f}</li>`).join('');
+    
+    // Update technologies
+    const techContainer = document.getElementById('projectTech');
+    techContainer.innerHTML = project.tech.map(t => `<span>${t}</span>`).join('');
+    
+    // Update gallery
+    const gallery = document.getElementById('projectGallery');
+    gallery.innerHTML = project.gallery.map(img => 
+      `<div><img src="${img}" alt="Project screenshot"></div>`
+    ).join('');
+    
+    // Update page title
+    document.title = `${project.title} — Meet Suthar`;
+  } else {
+    // Default message if no project specified
+    document.getElementById('projectTitle').textContent = 'Project Not Found';
+    document.getElementById('projectSubtitle').textContent = 'Please select a project from the portfolio.';
+  }
+})();
+</script>
+</body>
+</html>

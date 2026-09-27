@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio — Meet Suthar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader">
+  <div class="loader-content">
+    <div class="loader-ring"></div>
+    <div class="loader-text">Loading</div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<canvas id="three-bg"></canvas>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">
+    <div class="logo-mark">M</div>
+    <span>Meet</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta magnetic">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+<section class="section" style="padding-top:180px">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-tag">Portfolio</div>
+      <h1 class="section-title">Selected <span class="grad">work.</span></h1>
+      <p class="section-sub">A collection of enterprise-grade platforms and intelligent systems I've built.</p>
+    </div>
+
+    <div class="grid grid-2" data-project-grid>
+      
+      <!-- Project 1: AI Business Automation -->
+      <a href="project-details.html?project=ai-automation" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-robot"></i> AI Platform</span>
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80" alt="AI Business Automation Platform">
+        </div>
+        <div class="project-body">
+          <h3>AI Business Automation Platform</h3>
+          <p>Enterprise AI suite automating workflows across sales, operations, and support with intelligent process automation and machine learning.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-html5"></i> HTML</span>
+            <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span><i class="fa-brands fa-java"></i> Java</span>
+            <span><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span><i class="fa-solid fa-database"></i> MySQL</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Project 2: Enterprise CRM & ERP -->
+      <a href="project-details.html?project=crm-erp" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-briefcase"></i> Enterprise</span>
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="Enterprise CRM & ERP Platform">
+        </div>
+        <div class="project-body">
+          <h3>Enterprise CRM & ERP Platform</h3>
+          <p>Unified business management suite with CRM, inventory, HR, and finance modules for streamlined enterprise operations.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-java"></i> Java</span>
+            <span><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span><i class="fa-solid fa-database"></i> MySQL</span>
+            <span><i class="fa-brands fa-html5"></i> HTML</span>
+            <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Project 3: Multi-Vendor E-Commerce -->
+      <a href="project-details.html?project=ecommerce" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-cart-shopping"></i> E-Commerce</span>
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80" alt="Multi-Vendor E-Commerce Platform">
+        </div>
+        <div class="project-body">
+          <h3>Enterprise Multi-Vendor E-Commerce</h3>
+          <p>Scalable marketplace platform with real-time inventory, multi-vendor management, payment integration, and analytics.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-html5"></i> HTML</span>
+            <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span><i class="fa-solid fa-database"></i> MySQL</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Project 4: Healthcare Management -->
+      <a href="project-details.html?project=healthcare" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-heart-pulse"></i> Healthcare</span>
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80" alt="Smart Healthcare Management">
+        </div>
+        <div class="project-body">
+          <h3>Smart Healthcare Management Platform</h3>
+          <p>HIPAA-compliant hospital management system with patient records, appointments, billing, and telemedicine integration.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-java"></i> Java</span>
+            <span><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span><i class="fa-solid fa-database"></i> MySQL</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Project 5: Business Intelligence Dashboard -->
+      <a href="project-details.html?project=bi-dashboard" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-chart-line"></i> Analytics</span>
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="Business Intelligence Dashboard">
+        </div>
+        <div class="project-body">
+          <h3>Business Intelligence Dashboard</h3>
+          <p>Real-time analytics platform with interactive charts, KPI tracking, data visualization, and automated reporting.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span><i class="fa-solid fa-chart-line"></i> Charts</span>
+            <span><i class="fa-solid fa-layer-group"></i> Dashboard UI</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Project 6: Digital Banking & FinTech -->
+      <a href="project-details.html?project=fintech" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-building-columns"></i> FinTech</span>
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80" alt="Digital Banking Platform">
+        </div>
+        <div class="project-body">
+          <h3>Digital Banking & FinTech Platform</h3>
+          <p>Secure digital banking solution with real-time transactions, payment gateway, wallet management, and fraud detection.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-java"></i> Java</span>
+            <span><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span><i class="fa-solid fa-credit-card"></i> Payment API</span>
+            <span><i class="fa-solid fa-database"></i> MySQL</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Project 7: Logistics & Supply Chain -->
+      <a href="project-details.html?project=logistics" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-truck-fast"></i> Logistics</span>
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80" alt="Logistics & Supply Chain">
+        </div>
+        <div class="project-body">
+          <h3>Logistics & Supply Chain Platform</h3>
+          <p>End-to-end supply chain management with route optimization, inventory tracking, fleet management, and real-time analytics.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-java"></i> Java</span>
+            <span><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span><i class="fa-brands fa-html5"></i> HTML</span>
+            <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Project 8: AI Learning Management System -->
+      <a href="project-details.html?project=lms" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-graduation-cap"></i> EdTech</span>
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80" alt="AI Learning Management System">
+        </div>
+        <div class="project-body">
+          <h3>AI Learning Management System</h3>
+          <p>Intelligent e-learning platform with course management, AI-powered recommendations, progress tracking, and assessments.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-java"></i> Java</span>
+            <span><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span><i class="fa-brands fa-html5"></i> HTML</span>
+            <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Project 9: Commercial Real Estate -->
+      <a href="project-details.html?project=real-estate" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-building"></i> Real Estate</span>
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80" alt="Commercial Real Estate Platform">
+        </div>
+        <div class="project-body">
+          <h3>Commercial Real Estate Platform</h3>
+          <p>Property listing and management platform with virtual tours, tenant management, lease tracking, and investment analytics.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-html5"></i> HTML</span>
+            <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span><i class="fa-brands fa-java"></i> Java</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Project 10: SaaS Project Management -->
+      <a href="project-details.html?project=saas-pm" class="project">
+        <div class="project-img">
+          <span class="project-tag"><i class="fa-solid fa-cloud"></i> SaaS</span>
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80" alt="SaaS Project Management">
+        </div>
+        <div class="project-body">
+          <h3>SaaS Project Management Platform</h3>
+          <p>Cloud-based project management with Kanban boards, Gantt charts, team collaboration, time tracking, and resource planning.</p>
+          <div class="project-tech">
+            <span><i class="fa-brands fa-java"></i> Java</span>
+            <span><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span><i class="fa-solid fa-database"></i> MySQL</span>
+          </div>
+          <div class="project-link">View Details <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <div>© 2026 Meet Suthar</div>
+      <div>Crafted with precision</div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<script src="js/portfolio-data.js"></script>
+<script src="js/portfolio-render.js"></script>
+<script src="js/three-background.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

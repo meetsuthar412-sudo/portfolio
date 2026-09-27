@@ -1,0 +1,58 @@
+@media (max-width:1200px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:60px}
+  .hero-visual{max-width:400px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .train-card{grid-template-columns:1fr;text-align:center}
+  .train-ic{margin:0 auto}
+}
+@media (max-width:900px){
+  .section{padding:100px 0}
+  .container{padding:0 24px}
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:flex}
+  .nav-links.open{
+    display:flex;flex-direction:column;position:absolute;top:calc(100% + 12px);left:0;right:0;
+    background:rgba(7,9,22,.95);backdrop-filter:blur(20px);padding:20px;border-radius:var(--radius-lg);
+    border:1px solid var(--glass-border);
+  }
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid-3,.grid-2,.detail-grid,.project-gallery{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .about-info{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:30px}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .hero h1{letter-spacing:-2px}
+  .resume-wrap{padding:30px}
+  .contact-form{padding:28px}
+  .exp-head{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:560px){
+  .navbar{width:calc(100% - 24px);padding:12px 18px}
+  .logo{font-size:18px}
+  .logo-mark{width:32px;height:32px;border-radius:10px}
+  .hero{padding:120px 0 60px}
+  .hero-float{display:none}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .btn,.nav-cta{width:100%;justify-content:center}
+  .section-title{letter-spacing:-1px}
+  .section-sub{font-size:15px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{padding:20px}
+  .stat .num{font-size:32px}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .exp-card,.train-card,.card,.project-body{padding:24px}
+  .project-img{aspect-ratio:16/11}
+  .project-tech{gap:6px}
+  .project-tech span{padding:5px 8px;font-size:10px}
+  .project-actions{display:grid;grid-template-columns:1fr}
+  .project-actions .project-link{justify-content:center;width:100%}
+  .train-ic{width:60px;height:60px;font-size:24px}
+  .hero h1{font-size:clamp(2.2rem, 12vw, 3.3rem);line-height:1.05}
+  .hero-role{font-size:18px}
+  .hero-desc{font-size:15px}
+  .contact-card{padding:18px}
+  .contact-card .v{font-size:14px}
+  .footer-grid{margin-bottom:20px}
+  .footer-bottom{font-size:12px}
+}
